@@ -3,6 +3,7 @@
     <h1>{{ message }}</h1>
   </div>
 </template>
+// this is a comment i hope, signed dan clair
 
 <style>
 </style>
@@ -11,10 +12,10 @@
 export default {
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      message: "Welcome to Vue.js!",
     };
   },
   created: function() {},
-  methods: {}
+  methods: {},
 };
 </script>
