@@ -12,7 +12,7 @@
 export default {
   data: function() {
     return {
-      message: "Welcome to Vue.js!",
+      message: "bye Vue.js",
     };
   },
   created: function() {},
