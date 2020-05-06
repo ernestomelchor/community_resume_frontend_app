@@ -4,7 +4,9 @@ import router from "./router";
 import axios from "axios";
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
+  process.env.NODE_ENV === "development"
+    ? "https://boiling-hollows-34522.herokuapp.com/api/students"
+    : "https://boiling-hollows-34522.herokuapp.com/api/students";
 
 Vue.config.productionTip = false;
 
