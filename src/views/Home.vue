@@ -12,17 +12,19 @@
       <h3>{{ student.experiences[0].start_date}} - {{ student.experiences[0].end_date}}</h3>
 
       <!-- add button below -->
-      <h3>{{ student.email }}</h3>
-      <h3>{{ student.phone_number }}</h3>
-      <h3>{{ student.linkedin_url }}</h3>
-      <h3>{{ student.resume_url}}</h3>
-      <h3>{{ student.github_url }}</h3>
-      <h3>{{ student.website_url}}</h3>
-
-      <div v-for="experience in student.experiences">
-        <h3>{{ experience.job_title }}</h3>
+      <button v-on:click="showStudent(student)">Show More Info</button>
+      <div v-if="student === currentStudent">
+        <h3>{{ student.email }}</h3>
+        <h3>{{ student.phone_number }}</h3>
+        <h3>{{ student.linkedin_url }}</h3>
+        <h3>{{ student.resume_url}}</h3>
+        <h3>{{ student.github_url }}</h3>
+        <h3>{{ student.website_url}}</h3>
+        <div v-for="experience in student.experiences">
+          <h3>{{ experience.job_title }}</h3>
+        </div>
+        <a :href="`https://www.twitter.com/${student.twitter_url}`">@{{ student.twitter_url }}</a>
       </div>
-      <a :href="`https://www.twitter.com/${student.twitter_url}`">@{{ student.twitter_url }}</a>
     </div>
   </div>
 </template>
@@ -58,7 +60,7 @@ export default {
               job_title: "Web Developer",
               company_name: "Github",
               details: "i work on the backend",
-              student_id: 1,
+              student_id: 1
             },
             {
               id: 2,
@@ -67,9 +69,9 @@ export default {
               job_title: "Ruby Developer",
               company_name: "Github",
               details: "i work on the backend",
-              student_id: 1,
-            },
-          ],
+              student_id: 1
+            }
+          ]
         },
         {
           id: 2,
@@ -92,9 +94,9 @@ export default {
               job_title: "Web Developer",
               company_name: "Github",
               details: "i work on the backend",
-              student_id: 2,
-            },
-          ],
+              student_id: 2
+            }
+          ]
         },
         {
           id: 3,
@@ -117,11 +119,12 @@ export default {
               job_title: "Software Developer",
               company_name: "Github",
               details: "i work on the backend",
-              student_id: 3,
-            },
-          ],
-        },
+              student_id: 3
+            }
+          ]
+        }
       ],
+      currentStudent: {}
     };
   },
   created: function() {
@@ -129,6 +132,14 @@ export default {
     //   this.photos = response.data;
     // });
   },
-  methods: {},
+  methods: {
+    showContact: function(student) {
+      if (this.currentStudent === student) {
+        this.currentStudent = {};
+      } else {
+        this.currentStudent = student;
+      }
+    }
+  }
 };
 </script>
