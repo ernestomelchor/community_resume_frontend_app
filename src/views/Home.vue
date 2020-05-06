@@ -1,14 +1,22 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <h1 >All Students</h1>
+    <h1>All Students</h1>
     <div v-for="student in students">
       <h2>{{ student.first_name }} {{ student.last_name }}</h2>
       <h3>{{ student.email }}</h3>
       <h3>{{ student.phone_number }}</h3>
       <h3>{{ student.short_bio }}</h3>
-      <h3>{{ student.linked_in_url }}</h3>
-      <a :href="`https://www.twitter.com/${student.twitter_handle}`">@{{ student.twitter_handle }}</a>
+      <h3>{{ student.linkedin_url }}</h3>
+      <h3>{{ student.resume_url}}</h3>
+      <h3>{{ student.github_url }}</h3>
+      <h3>{{ student.website_url}}</h3>
+
+      <img :src="`${student.photo}`" alt="person's picture" />
+      <br />
+      <br />
+
+      <a :href="`https://www.twitter.com/${student.twitter_url}`">@{{ student.twitter_url }}</a>
     </div>
   </div>
 </template>
@@ -29,9 +37,12 @@ export default {
           email: "bob@example.com",
           phone_number: "111-1111",
           short_bio: "My name is Bob. I'm not a blob.",
-          linked_in_url: "www.linkedin.com/in/bobsmith",
-          twitter_handle: "bobsmith",
-          website: "www.bobsmith.com",
+          linkedin_url: "www.linkedin.com/in/bobsmith",
+          twitter_url: "bobsmith",
+          website_url: "www.bobsmith.com",
+          resume_url: "www.bobsmithresume.com",
+          github_url: "www.github.com/bobsmith",
+          photo: "bobsmith.jpg",
         },
         {
           first_name: "Sally",
@@ -39,9 +50,12 @@ export default {
           email: "sally@example.com",
           phone_number: "222-2222",
           short_bio: "My name is Sally. I bowl in an alley.",
-          linked_in_url: "www.linkedin.com/in/sallyjones",
-          twitter_handle: "sallyjones",
-          website: "www.sallyjones.com",
+          linkedin_url: "www.linkedin.com/in/sallyjones",
+          twitter_url: "sallyjones",
+          website_url: "www.sallyjones.com",
+          resume_url: "www.sallyjonesresume.com",
+          github_url: "www.github.com/sallyjones",
+          photo: "sallyjones.jpg",
         },
         {
           first_name: "Freddy",
@@ -49,9 +63,12 @@ export default {
           email: "freddy@example.com",
           phone_number: "333-3333",
           short_bio: "My name is Freddy. I'm not ready.",
-          linked_in_url: "www.linkedin.com/in/freddyhernandez",
-          twitter_handle: "freddyhernandez",
-          website: "www.freddyhernandez.com",
+          linkedin_url: "www.linkedin.com/in/freddyhernandez",
+          twitter_url: "freddyhernandez",
+          website_url: "www.freddyhernandez.com",
+          resume_url: "www.freddyhernandezresume.com",
+          github_url: "www.github.com/freddyhernandez",
+          photo: "freddyhernandez.jpg",
         },
       ],
     };
