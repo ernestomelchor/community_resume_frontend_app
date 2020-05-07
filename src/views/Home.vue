@@ -17,7 +17,7 @@
         <p>{{ student.experiences[0].job_title}} at {{ student.experiences[0].company_name }} ({{ student.experiences[0].start_date}} - {{ student.experiences[0].end_date}})</p>
       </div>
 
-      <!-- add button below -->
+      <!-- add show button below -->
       <div>
         <button v-on:click="showStudent(student)">Show More Info</button>
       </div>
