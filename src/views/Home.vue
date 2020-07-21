@@ -14,7 +14,13 @@
         <b>Bio:</b>
         <p>{{ student.short_bio }}</p>
         <b>Current Job:</b>
-        <p>{{ student.experiences[0].job_title}} at {{ student.experiences[0].company_name }} ({{ student.experiences[0].start_date}} - {{ student.experiences[0].end_date}})</p>
+        <p>
+          {{ student.experiences[0].job_title }} at
+          {{ student.experiences[0].company_name }} ({{
+          student.experiences[0].start_date
+          }}
+          - {{ student.experiences[0].end_date }})
+        </p>
       </div>
 
       <!-- add show button below -->
@@ -26,11 +32,16 @@
         <b>Employment Experience:</b>
         <div v-for="experience in student.experiences">
           <ul>
-            <li>{{ experience.job_title }} at {{ experience.company_name }} ({{ experience.start_date }} - {{ experience.end_date }})</li>
+            <li>
+              {{ experience.job_title }} at {{ experience.company_name }} ({{
+              experience.start_date
+              }}
+              - {{ experience.end_date }})
+            </li>
           </ul>
         </div>
         <b>Resume:</b>
-        <p>{{ student.resume_url}}</p>
+        <p>{{ student.resume_url }}</p>
         <b>LinkedIn:</b>
         <p>{{ student.linkedin_url }}</p>
         <b>e-mail:</b>
@@ -40,7 +51,7 @@
         <b>GitHub:</b>
         <p>{{ student.github_url }}</p>
         <b>Personal Website:</b>
-        <p>{{ student.website_url}}</p>
+        <p>{{ student.website_url }}</p>
         <b>Twitter:</b>
         <div>
           <a :href="`https://www.twitter.com/${student.twitter_url}`">@{{ student.twitter_url }}</a>
@@ -49,7 +60,6 @@
     </div>
   </div>
 </template>
-
 
 <style>
 img {
